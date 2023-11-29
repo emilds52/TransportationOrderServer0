@@ -82,12 +82,19 @@ public class TransportationOrderControllerTest {
              0,0.0,0.0,0)));
     // now write the rest of the test case...
     RequestBuilder request = MockMvcRequestBuilders
-      .get("/transportationorders")
+      .get("/transportationorders/8962ZKR")
       .accept(MediaType.APPLICATION_JSON);
             
     MvcResult result = mockMvc.perform(request)
       .andExpect(status().isOk())
-      .andExpect(jsonPath("$", hasSize(20)))
+      .andReturn();
+
+    request = MockMvcRequestBuilders
+      .get("/transportationorders/WRONGPLATE")
+      .accept(MediaType.APPLICATION_JSON);
+
+    result = mockMvc.perform(request)
+      .andExpect(status().isNotFound())
       .andReturn();
   }
 }
