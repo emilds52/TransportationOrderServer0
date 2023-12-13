@@ -46,6 +46,7 @@ public class TransportationOrderControllerTest {
         //call GET "/transportationorders"  application/json
        
         when(repository.findAll()).thenReturn(getAllTestOrders());
+        
         RequestBuilder request = MockMvcRequestBuilders
                 .get("/transportationorders")
                 .accept(MediaType.APPLICATION_JSON);
