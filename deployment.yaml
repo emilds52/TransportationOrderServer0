@@ -32,5 +32,5 @@ spec:
         image: ghcr.io/emilds/ts
         ports:
         - containerPort: 8080
-        imagePullSecrets:
+      imagePullSecrets:
       - name: github-registry
