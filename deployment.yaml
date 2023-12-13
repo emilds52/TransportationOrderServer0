@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: transportationorderserver
-        image: ghcr.io/emilds/tos
+        image: ghcr.io/emilds/ts
         ports:
         - containerPort: 8080
         imagePullSecrets:
